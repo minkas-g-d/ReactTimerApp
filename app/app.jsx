@@ -3,7 +3,9 @@ var ReactDOM = require( 'react-dom' );
 
 var { Router, Route, IndexRoute, hashHistory } = require( 'react-router' );
 
-var Main = require('Main');
+var Main = require( 'Main' );
+var Countdown = require( 'Countdown' );
+var Timer = require( 'Timer' );
 
 // load foundation
 // by default webpack do not know how to load the css so we use the loader css!
@@ -16,6 +18,8 @@ $( document ).foundation();
 ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path="/" component={ Main }>
+			<Route path="countdown" component={ Countdown } />
+			<IndexRoute component={ Timer } />
 		</Route>
 	</Router>
 	, document.getElementById( 'app' )
